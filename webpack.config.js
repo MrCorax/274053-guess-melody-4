@@ -24,4 +24,9 @@ module.exports = {
     ],
   },
   devtool: `source-map`, // показывает как код был на самом деле
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, `./src/components`),
+    }
+  }
 };
