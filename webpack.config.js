@@ -1,4 +1,5 @@
 const path = require(`path`);
+const webpack = require(`webpack`);
 
 module.exports = {
   entry: `./src/index.js`,  // точка входа
@@ -27,6 +28,14 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, `./src/components`),
-    }
-  }
+    },
+    modules: ['node_modules', path.resolve(path.join(__dirname, `./src`))], // для того что бы не писать расширения файлов
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.webm'],
+  },
+  plugins: [
+    new webpack.ProvidePlugin ({
+      React: `react`,
+      PropTypes: `prop-types`
+    })
+  ]
 };
