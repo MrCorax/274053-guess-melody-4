@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "Учебный проект «Угадай мелодию» от HTML Academy",
-  "jest": {
-    "setupFiles": ["./jest.setup.js"]
-  },
   "scripts": {
     "build": "webpack --mode production",
     "eslint": "eslint --ext .jsx --ext .js src/",
@@ -36,6 +33,7 @@
   "dependencies": {
     "prop-types": "15.7.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-router-dom": "5.2.0"
   }
 }

@@ -12,6 +12,7 @@ module.exports = {
     open: true, // открывать или не открывать браузер
     inline: true, // автообновление страницы в браузере
     port: 1337,
+    historyApiFallback: true,
   },
   module: {
     rules: [ // учит webpack работать с jsx
@@ -28,6 +29,7 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, `./src/components`),
+      '@mock': path.resolve(__dirname, `./src/mocks`),
     },
     modules: ['node_modules', path.resolve(path.join(__dirname, `./src`))], // для того что бы не писать расширения файлов
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.webm'],
@@ -35,8 +37,9 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin ({
       React: `react`,
+      PureComponent: `react`,
       PropTypes: `prop-types`,
-      renderer: `react-test-renderer`
+      renderer: `react-test-renderer`,
     })
   ]
 };
